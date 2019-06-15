@@ -78,7 +78,7 @@ def main_process(file, acoustid_key, lastfm_key):
 
 
 def validate_save(filename):
-	invalids = ['<', '>', '?', '|', '/','\',':','*','#',"'",'"']
+	invalids = ['<', '>', '?', '|', '/','\\',':','*','#',"'",'"']
 	for i in invalids:
 		    filename.replace(i, "")
 	return filename
