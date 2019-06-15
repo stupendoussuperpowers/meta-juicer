@@ -15,3 +15,5 @@ writes song's correct metadata to its mp3 file
 - add comments
 - clean code
 - better error handling
+- add album art as well
+- more metadata
