@@ -4,8 +4,7 @@ import json
 import os
 from mutagen.easyid3 import EasyID3
 
-acoustid_key = '' #enter your acoustid api key here
-lastfm_key = '' #enter you lastfm api key here
+
 
 class Error(Exception):
 	pass
@@ -77,6 +76,9 @@ def main_process(file):
 		print("error(audio fingerprint not found in AcoustID)")
 
 def main():
+	acoustid_key = '' #enter your acoustid api key here
+	lastfm_key = '' #enter you lastfm api key here
+	
 	if not acoustid_key:
 		acoustid_key = input("Enter your AcoustID API key: ")
 	if not lastfm_key:
