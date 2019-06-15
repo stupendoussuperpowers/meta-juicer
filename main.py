@@ -47,7 +47,7 @@ def apply_metadata(data, filename):
 
 	audio = EasyID3(filename)
 	try:
-		title = data['track']['name']
+		title = validate_save(data['track']['name'])
 		audio['title'] = title
 		artist = data['track']['artist']['name']
 		audio['artist'] = artist
@@ -75,6 +75,13 @@ def main_process(file, acoustid_key, lastfm_key):
 		print("error(insufficient data in AcoustID database))")
 	except ValueError:
 		print("error(audio fingerprint not found in AcoustID)")
+
+
+def validate_save(filename):
+	invalids = ['<', '>', '?', '|', '/','\',':','*','#',"'",'"']
+	for i in invalids:
+		    filename.replace(i, "")
+	return filename
 
 def main():
 	acoustid_key = ''
